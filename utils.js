@@ -1,6 +1,6 @@
 module.exports = {
   getInput : () => {
-    return process.argv[2];
+    return process.argv.slice(2);
   },
   printOutput : (people) => {
     console.log(`Found ${people.length} person(s) matching your search.`);
