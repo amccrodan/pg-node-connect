@@ -26,5 +26,18 @@ module.exports = {
       done(result);
       pg.destroy();
     });
+  },
+  addPerson: (data, done) => {
+    const first_name = data[0];
+    const last_name = data[1];
+    const birthdate = data[2];
+    pg("famous_people").insert({
+      first_name: first_name,
+      last_name: last_name,
+      birthdate: birthdate
+    }).asCallback((err) => {
+      done();
+      pg.destroy();
+    });
   }
 }
