@@ -36,6 +36,9 @@ module.exports = {
       last_name: last_name,
       birthdate: birthdate
     }).asCallback((err) => {
+      if (err) {
+        console.log(err);
+      }
       done();
       pg.destroy();
     });
